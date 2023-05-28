@@ -72,7 +72,6 @@ open class TodoRepository(context: Context) :
 
         cursor.close()
         this.writableDatabase.close()
-        println(todos)
         return todos
     }
 

@@ -121,10 +121,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                         println("Error: ${error.message}")
                     }
                 }
-
-                runOnUiThread {
-                    //Update UI
-                }
             }.start()
 
         }
@@ -156,11 +152,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     private fun editTodoHandler(todo: TodoItem) {
         val intent = Intent(this, EditTask::class.java)
-        println("editTodoHandler" + todo)
         intent.putExtra("id", todo.id)
         intent.putExtra("title", todo.title)
         intent.putExtra("description", todo.description)
-        println("ASDASDASDASDASDASDASD")
         startActivity(intent)
     }
 
